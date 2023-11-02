@@ -179,8 +179,6 @@
                     </div>
                   </div>
                 </section>
-
-                <ProfileShortcodes />
               </div>
             </HoppSmartTab>
             <HoppSmartTab :id="'teams'" :label="t('team.title')">
