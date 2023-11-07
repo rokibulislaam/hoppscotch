@@ -10,9 +10,10 @@
       <span v-if="banner.alternateText" class="md:hidden">
         {{ banner.alternateText }}
       </span>
-      <span class="<md:hidden">
+      <span v-if="banner.text" class="<md:hidden">
         {{ banner.text }}
       </span>
+      <slot />
     </span>
   </div>
 </template>

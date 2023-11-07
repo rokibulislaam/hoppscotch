@@ -38,6 +38,7 @@
       @add-request="addRequest"
       @edit-collection="editCollection"
       @edit-folder="editFolder"
+      @edit-properties="editProperties"
       @export-data="exportData"
       @remove-collection="removeCollection"
       @remove-folder="removeFolder"
@@ -68,6 +69,7 @@
       @add-folder="addFolder"
       @edit-collection="editCollection"
       @edit-folder="editFolder"
+      @edit-properties="editProperties"
       @export-data="exportData"
       @remove-collection="removeCollection"
       @remove-folder="removeFolder"
@@ -152,6 +154,10 @@
     <TeamsAdd
       :show="showTeamModalAdd"
       @hide-modal="displayTeamModalAdd(false)"
+    />
+    <CollectionsProperties
+      :show="showModalEditProperties"
+      @hide-modal="displayModalEditProperties(false)"
     />
   </div>
 </template>
@@ -534,6 +540,7 @@ const showModalEditCollection = ref(false)
 const showModalEditFolder = ref(false)
 const showModalEditRequest = ref(false)
 const showModalImportExport = ref(false)
+const showModalEditProperties = ref(false)
 const showConfirmModal = ref(false)
 const showTeamModalAdd = ref(false)
 
@@ -575,6 +582,12 @@ const displayModalEditRequest = (show: boolean) => {
 
 const displayModalImportExport = (show: boolean) => {
   showModalImportExport.value = show
+
+  if (!show) resetSelectedData()
+}
+
+const displayModalEditProperties = (show: boolean) => {
+  showModalEditProperties.value = show
 
   if (!show) resetSelectedData()
 }
@@ -2010,6 +2023,19 @@ const importToTeams = async (collection: HoppCollection<HoppRESTRequest>[]) => {
       }
     )
   )()
+}
+
+const editProperties = (payload: {
+  collectionIndex: string
+  collection: HoppCollection<HoppRESTRequest> | TeamCollection
+}) => {
+  const { collection, collectionIndex } = payload
+
+  console.log(collectionIndex, collection)
+
+  editingCollection.value = collection
+
+  displayModalEditProperties(true)
 }
 
 const resolveConfirmModal = (title: string | null) => {

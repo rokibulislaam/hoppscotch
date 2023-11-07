@@ -5,7 +5,7 @@
 // Read more: https://github.com/vuejs/core/pull/3399
 export {}
 
-declare module "vue" {
+declare module 'vue' {
   export interface GlobalComponents {
     AppActionHandler: typeof import('./components/app/ActionHandler.vue')['default']
     AppAnnouncement: typeof import('./components/app/Announcement.vue')['default']
@@ -56,6 +56,7 @@ declare module "vue" {
     CollectionsGraphqlRequest: typeof import('./components/collections/graphql/Request.vue')['default']
     CollectionsImportExport: typeof import('./components/collections/ImportExport.vue')['default']
     CollectionsMyCollections: typeof import('./components/collections/MyCollections.vue')['default']
+    CollectionsProperties: typeof import('./components/collections/Properties.vue')['default']
     CollectionsRequest: typeof import('./components/collections/Request.vue')['default']
     CollectionsSaveRequest: typeof import('./components/collections/SaveRequest.vue')['default']
     CollectionsTeamCollections: typeof import('./components/collections/TeamCollections.vue')['default']
@@ -204,6 +205,7 @@ declare module "vue" {
     SmartSlideOver: typeof import('./../../hoppscotch-ui/src/components/smart/SlideOver.vue')['default']
     SmartSpinner: typeof import('./../../hoppscotch-ui/src/components/smart/Spinner.vue')['default']
     SmartTab: typeof import('./../../hoppscotch-ui/src/components/smart/Tab.vue')['default']
+    SmartTable: typeof import('./../../hoppscotch-ui/src/components/smart/Table.vue')['default']
     SmartTabs: typeof import('./../../hoppscotch-ui/src/components/smart/Tabs.vue')['default']
     SmartToggle: typeof import('./../../hoppscotch-ui/src/components/smart/Toggle.vue')['default']
     SmartTree: typeof import('./../../hoppscotch-ui/src/components/smart/Tree.vue')['default']
