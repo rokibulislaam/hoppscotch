@@ -8,7 +8,7 @@ export type BannerType = "info" | "warning" | "error"
 
 export type BannerContent = {
   type: BannerType
-  text: string
+  text?: string
   // Can be used to display an alternate text when display size is small
   alternateText?: string
 }
